@@ -1,24 +1,28 @@
 //store the active TCP connection object
 let connection;
 
-const handleUserInput = function (data) {
+const handleUserInput = function(data) {
   if (data === '\u0003') {
     process.exit();
   }
   switch (data) {
   case 'w':
-    connection.write("Move: up");
+    connection.write('Move: up');
     break;
   case 's':
-    connection.write("Move: down");
+    connection.write('Move: down');
     break;
   case 'a':
-    connection.write("Move: left");
+    connection.write('Move: left');
     break;
   case 'd':
-    connection.write("Move: right");
+    connection.write('Move: right');
+    break;
+  case 'k':
+    connection.write('Say: fix message');
+    break;
   }
-  connection.write("Say: " + data);
+  //connection.write('Say: ' + data);
 };
 /**
  * Setup User Interface
